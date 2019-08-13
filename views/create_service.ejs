@@ -11,7 +11,7 @@
       <div class="input-field">
         <select class="browser-default" name="category" required>
           <option value="" disabled selected>Категория</option>
-          <% for(var categories of categories) {%>
+          <% for (var categories of categories) {%>
               <option value="<%= categories.name %>"> <%- categories.name %> </option>
           <% } %>
         </select>
