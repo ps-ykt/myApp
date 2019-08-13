@@ -1,0 +1,63 @@
+      <nav class="blue darken-4">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Logo</a>
+
+                <ul class="right hide-on-med-and-down">
+                  <% if(locals.isIndex){ %>
+                  <li class="active">
+                    <a href="/" class="active">Главная</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/">Главная</a>
+                  </li>
+                  <% } %>
+                  <% if(locals.isCategoryId){ %>
+                  <li class="active">
+                    <a href="/category/Фотографы" class="active">Фотографы</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/category/Фотографы">Фотографы</a>
+                  </li>
+                  <% } %>
+                  <% if(locals.isCategory){ %>
+                  <li class="active">
+                    <a href="/category" class="active">Категории</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/category">Категории</a>
+                  </li>
+                  <% } %>
+                  <% if(locals.isService){ %>
+                  <li class="active">
+                    <a href="/service" class="active">Услуги</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/service">Услуги</a>
+                  </li>
+                  <% } %>
+                  <% if(locals.isCreateCategory){ %>
+                  <li class="active">
+                    <a href="/create_category" class="active">Создать категорию</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/create_category">Создать категорию</a>
+                  </li>
+                  <% } %>
+                  <% if(locals.isCreateService){ %>
+                  <li class="active">
+                    <a href="/create_service" class="active">Создать услугу</a>
+                  </li>
+                  <% } else{ %>
+                  <li>
+                    <a href="/create_service">Создать услугу</a>
+                  </li>
+                  <% } %>
+                </ul>
+
+        </div>
+      </nav>

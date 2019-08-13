@@ -1,0 +1,25 @@
+<% include blocks/header.ejs %>
+<% include blocks/navbar.ejs %>
+
+    <h3><%= obj.title %>:&nbsp;<b><%= categoryName %></b><br>
+    </h3>
+
+    <% obj.paragraphs.forEach(function(item) { %>
+      <div class="col s12 m7">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ecL_yr2PeUHV5U7tFFz9AF-cXRjAT2wxkXjQmNOrWyS3R1j_JA">
+            </div>
+            <div class="card-stacked">
+              <div class="card-action">
+                <a href="/category/photographs/<%= item2=item.replace(/\s+/g,"_") %>"><%= item %></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <% }); %>
+
+<% include blocks/footer.ejs %>

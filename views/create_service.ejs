@@ -1,0 +1,27 @@
+<% include blocks/header.ejs %>
+<% include blocks/navbar.ejs %>
+
+    <form action="/create_service" method="POST">
+      <h2>Создать услугу</h2>
+
+      <div class="input-field">
+        <input type="text" name="name" required>
+        <label>Название услуги</label>
+      </div>
+      <div class="input-field">
+        <select class="browser-default" name="category" required>
+          <option value="" disabled selected>Категория</option>
+          <% for(var categories of categories) {%>
+              <option value="<%= categories.name %>"> <%- categories.name %> </option>
+          <% } %>
+        </select>
+      </div>
+      <div class="input-field">
+        <input type="number" name="price" required>
+        <label>Стоимость</label>
+      </div>
+    
+      <button type="submit" class="btn">Создать</button>
+    </form>
+
+<% include blocks/footer.ejs %>

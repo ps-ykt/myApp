@@ -1,0 +1,33 @@
+<% include blocks/header.ejs %>
+<% include blocks/navbar.ejs %>
+
+<% if(categories.length){ %>
+    <ul>
+        <!--// итерация-->
+        <% categories.forEach((services) => { %>
+          <li class="service">
+            <form action="/deactivate_service" method="POST">
+              <label>
+                <% if(services.active){ %>
+                  <input type="checkbox" checked name="active">
+                  <span><a href="/category/<%- services.name %>"><%- services.name %></a></span>
+                <% } else{ %>
+                  <input type="checkbox" name="active">
+                  <span class="deactive"><%- services.name %></span>
+                <% } %>
+
+                <span><a href="/category/<%- services.category %>"><%- services.category %></a></span>
+                <span><%- services.price %></span>
+                <input type="hidden" value="<%- services._id %>" name="id">
+                
+                <button class="btn btn-success" type="submit">Сохранить</button>
+              </label>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+  <% } else{ %>
+    <p>Нет услуг</p>
+  <% } %>
+    
+<% include blocks/footer.ejs %>

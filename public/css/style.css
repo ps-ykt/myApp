@@ -1,0 +1,43 @@
+.category {
+    margin-bottom: 1rem;
+}
+
+.category span.deactive {
+    text-decoration: line-through;
+}
+
+.category label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 1rem;
+}
+
+.category i {
+    z-index: 2;
+}
+
+.service {
+    margin-bottom: 1rem;
+}
+
+.service span.deactive {
+    text-decoration: line-through;
+}
+
+.service label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 1rem;
+}
+
+.service i {
+    z-index: 2;
+}

@@ -1,0 +1,15 @@
+<% include blocks/header.ejs %>
+<% include blocks/navbar.ejs %>
+
+    <form action="/create_category" method="POST">
+      <h2>Создать категорию</h2>
+
+      <div class="input-field">
+        <input type="text" name="name" required>
+        <label>Название категории</label>
+      </div>
+
+      <button type="submit" class="btn">Создать</button>
+    </form>
+
+<% include blocks/footer.ejs %>
