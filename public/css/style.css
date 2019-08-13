@@ -41,3 +41,8 @@
 .service i {
     z-index: 2;
 }
+
+.break {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
