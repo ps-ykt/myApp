@@ -7,20 +7,31 @@
     <% if(categories.length){ %>
       <ul>
           <!--// итерация-->
+          <li class="category"><label><span>Статус</span><span>Услуга</span><span></span></label></li>
           <% categories.forEach((categories) => { %>
+            
             <li class="category">
-              <form action="/deactivate_category" method="POST">
+              <form id="form" action="/deactivate_category" method="POST">
                 <label>
                   <% if(categories.active){ %>
-                    <input type="checkbox" checked name="active">
+                    <div class="switch">
+                      <label>
+                        <input type="checkbox" checked name="active" onclick="submit()">
+                        <span class="lever"></span>
+                      </label>
+                    </div>
                     <span><a href="/category/<%- categories.name %>"><%- categories.name %></a></span>
                   <% } else{ %>
-                    <input type="checkbox" name="active">
+                    <div class="switch">
+                      <label>
+                        <input type="checkbox" name="active" onclick="submit()">
+                        <span class="lever"></span>
+                      </label>
+                    </div>
                     <span class="deactive"><%- categories.name %></span>
                   <% } %>
 
                   <input type="hidden" value="<%- categories._id %>" name="id">
-                  
                   <button class="btn btn-success" type="submit">Сохранить</button>
                 </label>
               </form>
@@ -30,5 +41,10 @@
     <% } else{ %>
       <p>Нет категорий</p>
     <% } %>
+
+  <script>
+    function submit() {
+      document.getElementById('form').submit();
+  </script>
 
 <% include blocks/footer.ejs %>

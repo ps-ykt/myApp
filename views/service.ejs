@@ -9,13 +9,23 @@
           <!--// итерация-->
           <% services.forEach((services) => { %>
             <li class="service">
-              <form action="/deactivate_service" method="POST">
+              <form id="form" action="/deactivate_service" method="POST">
                 <label>
                   <% if(services.active){ %>
-                    <input type="checkbox" checked name="active">
+                    <div class="switch">
+                      <label>
+                        <input type="checkbox" checked name="active" onclick="submit()">
+                        <span class="lever"></span>
+                      </label>
+                    </div>
                     <span><a href="/category/<%- services.name %>"><%- services.name %></a></span>
                   <% } else{ %>
-                    <input type="checkbox" name="active">
+                    <div class="switch">
+                        <label>
+                          <input type="checkbox" name="active" onclick="submit()">
+                          <span class="lever"></span>
+                        </label>
+                      </div>
                     <span class="deactive"><%- services.name %></span>
                   <% } %>
 
@@ -32,5 +42,10 @@
     <% } else{ %>
       <p>Нет услуг</p>
     <% } %>
+
+    <script>
+        function submit() {
+          document.getElementById('form').submit();
+    </script>
 
 <% include blocks/footer.ejs %>
