@@ -1,5 +1,0 @@
-{
-    "ip": "localhost",
-    "port": "8500",
-    "mongoDb": "mongodb+srv://admin:Rewolf_13@cluster0-q1zaj.azure.mongodb.net/app"
-}

@@ -1,2 +1,2 @@
 // директива
-require('./server')
+require('./server');
