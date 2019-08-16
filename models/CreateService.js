@@ -1,25 +1,31 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose');
 
-const schema = new Schema ({
+const schema = new Schema(
+  {
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     category: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     price: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
     active: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true
     }
-},  {
+  },
+  {
     timestamps: true
-    }
-)
+  }
+);
 
-module.exports = model('Service', schema)
+schema.set('toJSON', {
+  virtuals: true
+});
+
+module.exports = model('Service', schema);

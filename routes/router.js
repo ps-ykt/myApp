@@ -59,7 +59,7 @@ router.post('/create_category', async (req, res) => {
     .save()
     .then(post =>
       console.log(
-        'Создана новая запись ' + post.name + ' в categories с ID:' + post._id
+        `Создана новая запись ${post.name} в categories с ID: ${post._id}`
       )
     ); // вывод записи в консоль
   res.redirect('/category');
@@ -77,7 +77,7 @@ router.post('/create_service', async (req, res) => {
     .save()
     .then(post =>
       console.log(
-        'Создана новая запись ' + post.name + ' в services с ID:' + post._id
+        `Создана новая запись ${post.name} в services с ID: ${post._id}`
       )
     ); // вывод записи в консоль
   res.redirect('/service');
